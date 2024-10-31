@@ -1,0 +1,96 @@
+version: '3.7'
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  cliente1:
+    build: ./app
+    command: python cliente.py
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+  cliente2:
+    build: ./app
+    command: python cliente.py
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+  cliente3:
+    build: ./app
+    command: python cliente.py
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+  cliente4:
+    build: ./app
+    command: python cliente.py
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+  cliente5:
+    build: ./app
+    command: python cliente.py
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+  elementosync1:
+    build: ./app
+    command: python elementosync.py
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+  elementosync2:
+    build: ./app
+    command: python elementosync.py
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+  elementosync3:
+    build: ./app
+    command: python elementosync.py
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+  elementosync4:
+    build: ./app
+    command: python elementosync.py
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+
+  elementosync5:
+    build: ./app
+    command: python elementosync.py
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
